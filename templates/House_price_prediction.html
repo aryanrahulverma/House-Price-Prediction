@@ -1,0 +1,83 @@
+<html>
+<style>
+    body {
+        font-family: Arial;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f8f9fa !important;
+    }
+
+    h1 {
+        margin: 5px;
+    }
+
+    form {
+        display: block;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    input {
+        border-radius: 5px;
+        border: 1px solid rgb(133, 133, 133);
+        display: block;
+        width: 100%;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+    }
+
+    td {
+        padding: 30px;
+    }
+
+    .predict {
+        border: 1px solid #0d6efd;
+        background-color: #0d6efd;
+        color: white;
+    }
+
+    .predict:hover {
+        background-color: #005fee;
+    }
+
+    ::placeholder{
+        font-style: italic;
+        font-size:small;
+    }
+</style>
+
+<body>
+    <form action="{{url_for('home')}}" method="POST">
+        <h1>House Price Predictor</h1>
+        <table>
+            <tr>
+                <td>
+                    <p>Bedrooms:</p><input type="number" placeholder="eg: 3" name="a">
+                    <p>Bathrooms:</p><input type="number" placeholder="eg: 2" name="b">
+                    <p>Living Room sqft:</p><input type="number" placeholder="eg: 1500" name="c">
+                    <p>Lot sqft:</p><input type="number" placeholder="eg: 5000" name="d">
+                    <p>Floors:</p><input type="number" placeholder="eg: 1" name="e">
+                </td>
+                <td>
+                    <p>Grade:</p><input type="number" placeholder="eg: 6" name="f">
+                    <p>Above sqft:</p><input type="number" placeholder="eg: 1100" name="g">
+                    <p>Basement sqft:</p><input type="number" placeholder="eg: 500" name="h">
+                    <p>Year Built:</p><input type="number" placeholder="eg: 1953" name="i">
+                    <p>Zipcode:</p><input type="number" placeholder="eg: 98074" name="j">
+                </td>
+            </tr>
+            <td colspan="2">
+                <input type="submit" class="predict" value="Predict">
+            </td>
+        </table>
+    </form>
+</body>
+
+</html>
